@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f7eee0">
+  <title>Christmas Tree Decoration</title>
+  <link rel="stylesheet" href="./styles/main.css">
+</head>
+<body>
+  <main class="game-shell">
+    <header class="topbar"><div><span class="eyebrow">A LITTLE HOLIDAY MAGIC</span><h1>Christmas Tree</h1></div><button id="finish" class="finish">完成作品 <span>✦</span></button></header>
+    <section class="stage" aria-label="圣诞树装饰区"><div class="hint">挑选装饰拖到树上 · 拖动贴纸移动，拖拽角点编辑</div><button id="prevTree" class="tree-arrow">‹</button><canvas id="scene" aria-label="圣诞树画布"></canvas><button id="nextTree" class="tree-arrow">›</button></section>
+    <section class="tray-wrap"><div class="tray-heading"><div class="tray-title"><span>小小装饰铺</span><small>左右滑动挑选</small></div><div class="tray-actions"><button id="drawTreeOpen" class="draw-open">＋ 画一颗树</button><button id="drawOpen" class="draw-open">＋ 画个装饰</button></div></div><div class="tray" id="tray" aria-label="装饰品选择栏"></div></section>
+    <footer>点选贴纸显示控制框 · 拖动角点自由缩放与旋转</footer>
+  </main>
+  <dialog id="drawDialog"><button class="close" data-close="drawDialog">×</button><h2 id="drawTitle">画一件专属装饰</h2><canvas id="drawCanvas" width="360" height="300"></canvas><div class="draw-actions"><input id="drawColor" type="color" value="#d96f62" aria-label="画笔颜色"><button id="clearDrawing">清除</button><button id="saveDrawing" class="finish">保存</button></div></dialog>
+  <dialog id="result"><button class="close" id="close" aria-label="关闭">×</button><h2>你的圣诞树完成啦！</h2><p>选择作品尺寸并留下署名</p><div class="export-options"><label>图片比例<select id="exportRatio"><option value="3:4">3:4 竖版</option><option value="4:3">4:3 横版</option><option value="1:1">1:1 方形</option><option value="9:16">9:16 手机壁纸</option><option value="16:9">16:9 横屏</option></select></label><input id="yourName" placeholder="Your name / 署名" maxlength="32"></div><img id="preview" alt="完成的圣诞树作品"><a id="download" class="finish" download="my-christmas-tree.png">保存图片 <span>↓</span></a></dialog>
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>
